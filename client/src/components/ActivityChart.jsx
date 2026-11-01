@@ -3,6 +3,7 @@ import { formatDate, formatDayMonth, peakDay, plural } from '../lib/leaderboard.
 import '../styles/ActivityChart.css'
 
 const MIN_DAYS = 5
+const DISPLAY_DAYS = 10
 const TOP_PAD = 10
 const PLOT_HEIGHT = 150
 const AXIS_HEIGHT = 26
@@ -38,7 +39,8 @@ function dayLabel(day) {
 }
 
 export default function ActivityChart({ dailyCounts }) {
-  const days = Array.isArray(dailyCounts) ? dailyCounts : []
+  const allDays = Array.isArray(dailyCounts) ? dailyCounts : []
+  const days = allDays.slice(-DISPLAY_DAYS)
   const peak = peakDay(days)
   const visible = days.length >= MIN_DAYS && peak !== null
 

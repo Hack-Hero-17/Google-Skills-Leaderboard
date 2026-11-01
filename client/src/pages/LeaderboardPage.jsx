@@ -9,6 +9,7 @@ import Podium from '../components/Podium.jsx'
 import ScoringInfo from '../components/ScoringInfo.jsx'
 import ActivityChart from '../components/ActivityChart.jsx'
 import MeBar from '../components/MeBar.jsx'
+import Testimonials from '../components/Testimonials.jsx'
 import GDG_LOGO from '../assets/gdg-on-campus-mit.jpeg'
 import BANNER_DESKTOP from '../assets/banner-desktop.png'
 import BANNER_MOBILE from '../assets/banner-mobile.png'
@@ -381,6 +382,8 @@ export default function LeaderboardPage() {
 
         <ScoringInfo competitionStartDate={data?.competitionStartDate} badgeStats={data?.badgeStats} />
       </section>
+
+      <Testimonials />
 
       {shown && <BadgeModal participant={shown} onClose={closeModal} />}
 
