@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import FAHMIYA_PHOTO from '../assets/fahmiya-fathima.jpeg'
 import KAUSHAL from '../assets/kaushal.png'
-import RATHI from '../assets/rathi.jpeg'
+import RATHI from '../assets/Rathi.jpeg'
 import MANOJ from '../assets/manoj.jpeg'
 import '../styles/Testimonials.css'
 
