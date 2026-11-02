@@ -18,7 +18,8 @@ export default function Navbar() {
   const dropdownRef = useRef(null)
   const { pathname, hash } = useLocation()
   const onLeaderboard = pathname === '/' && hash === '#leaderboard'
-  const onHome = pathname === '/' && !onLeaderboard
+  const onTestimonials = pathname === '/' && hash === '#testimonials'
+  const onHome = pathname === '/' && !hash
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -123,6 +124,16 @@ export default function Navbar() {
                   onClick={() => setNavCollapsed(true)}
                 >
                   Leaderboard
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  to="/#testimonials"
+                  className={`nav-link ${onTestimonials ? 'active' : ''}`}
+                  aria-current={onTestimonials ? 'location' : undefined}
+                  onClick={() => setNavCollapsed(true)}
+                >
+                  Testimonials
                 </Link>
               </li>
               <li className="nav-item">

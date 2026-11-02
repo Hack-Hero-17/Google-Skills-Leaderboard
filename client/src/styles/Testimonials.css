@@ -1,0 +1,137 @@
+.testimonials-welcome-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1060;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  background: var(--overlay);
+}
+
+.testimonials-welcome-modal {
+  position: relative;
+  width: min(100%, 440px);
+  padding: var(--space-6);
+  overflow: hidden;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-xl);
+  background:
+    linear-gradient(135deg, rgba(66, 133, 244, 0.1), transparent 42%),
+    var(--card-bg);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+}
+
+.testimonials-welcome-modal::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 5px;
+  background: linear-gradient(
+    90deg,
+    var(--google-blue) 0 25%,
+    var(--google-red) 25% 50%,
+    var(--google-yellow) 50% 75%,
+    var(--google-green) 75% 100%
+  );
+}
+
+.testimonials-welcome-badge {
+  position: absolute;
+  top: 28px;
+  left: -39px;
+  width: 140px;
+  padding: var(--space-1) 0;
+  transform: rotate(-45deg);
+  background: var(--google-red);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.testimonials-welcome-eyebrow {
+  margin: 0 0 var(--space-2);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.testimonials-welcome-modal h2 {
+  margin: 0 0 var(--space-3);
+  color: var(--ink);
+  font-size: clamp(1.5rem, 5vw, 2rem);
+}
+
+.testimonials-welcome-modal p:not(.testimonials-welcome-eyebrow) {
+  margin: 0 auto var(--space-5);
+  max-width: 32ch;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.testimonials-welcome-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--touch-min);
+  padding: 0 var(--space-5);
+  border-radius: var(--radius-pill);
+  background: var(--link-text);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.testimonials-welcome-link:hover,
+.testimonials-welcome-link:focus {
+  color: #fff;
+  filter: brightness(0.92);
+}
+
+.testimonials-welcome-link:focus-visible,
+.testimonials-welcome-close:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.testimonials-welcome-close {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--touch-min);
+  height: var(--touch-min);
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.testimonials-welcome-close:hover {
+  background: var(--surface);
+  color: var(--ink);
+}
+
+@media (max-width: 575.98px) {
+  .testimonials-welcome-overlay {
+    align-items: center;
+    padding: var(--space-5);
+  }
+
+  .testimonials-welcome-modal {
+    width: 100%;
+    max-width: 360px;
+    padding: var(--space-5) var(--space-4);
+    border-radius: var(--radius-xl);
+  }
+}

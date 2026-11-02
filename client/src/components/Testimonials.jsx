@@ -1,32 +1,44 @@
+import { useEffect, useRef, useState } from 'react'
 import FAHMIYA_PHOTO from '../assets/fahmiya-fathima.jpeg'
+import KAUSHAL from '../assets/kaushal.png'
+import RATHI from '../assets/rathi.jpeg'
+import MANOJ from '../assets/manoj.jpeg'
+import '../styles/Testimonials.css'
 
 const TESTIMONIALS = [
   {
     name: 'Fahmiya Fathima',
-    role: 'Learn with Communities participant',
+    role: 'GDG AIML Team Lead',
     quote: 'Had a really good experience with the Learn with Communities campaign! Got to learn new things, explore Google Skills and gain practical knowledge along the way. Completing the programme and earning 9 badges made it even more special. Overall, it was a fun and valuable learning experience!',
     photo: FAHMIYA_PHOTO,
     accent: 'blue',
   },
   {
-    name: 'Arun Kumar',
-    role: 'Google Cloud learner',
-    quote: 'The campaign gave me a clear introduction to Google Cloud and helped me build practical skills through hands-on labs. Earning badges along the way kept me motivated and made learning more enjoyable.',
-    initials: 'AK',
+    name: 'Kaushal N',
+    role: 'GDG Web Team Lead',
+    quote: 'My Google Cloud learning experience has been a great opportunity to gain hands-on experience with cloud services through practical labs and challenge labs. It helped me strengthen my technical skills, problem-solving abilities, and understanding of cloud computing. I\'m grateful for this opportunity and excited to learn more!',
+    photo: KAUSHAL,
     accent: 'red',
   },
   {
-    name: 'Meera S',
-    role: 'GDG on Campus MIT member',
-    quote: 'Learn with Communities was a great opportunity to learn at my own pace. The labs were practical, engaging, and helped me feel more confident using Google Cloud technologies.',
-    initials: 'MS',
+    name: 'Rathichandhrika S',
+    role: 'Learn with Communities participant',
+    quote: 'GDG Learn with Communities made complex tech genuinely accessible. Between the hands-on sessions and learning alongside such an encouraging peer network, it gave me the exact push and practical confidence I needed to build real-world projects.',
+    photo: RATHI,
     accent: 'green',
+  },
+  {
+    name: 'Manoj P',
+    role: 'Learn with Communities participant',
+    quote: 'Had a great experience with the Learn with Communities programme! Got to explore Google Cloud, learn new concepts, and gain practical knowledge through hands-on labs. Earning badges along the way made the journey even more exciting. Overall, it was a fun and valuable learning experience. Thanks to GDG for this opportunity!',
+    photo: MANOJ,
+    accent: 'yellow',
   },
 ]
 
 export default function Testimonials() {
   return (
-    <section className="testimonials-section leaderboard-wide-container" aria-labelledby="testimonials-heading">
+    <section id="testimonials" className="testimonials-section leaderboard-wide-container" aria-labelledby="testimonials-heading">
       <div className="testimonials-heading">
         <p className="testimonials-eyebrow">Community voices</p>
         <h2 id="testimonials-heading" className="testimonials-title">What our learners say</h2>
@@ -75,5 +87,60 @@ export default function Testimonials() {
         </div>
       </div>
     </section>
+  )
+}
+
+export function TestimonialsWelcomeModal() {
+  const [open, setOpen] = useState(true)
+  const closeRef = useRef(null)
+
+  useEffect(() => {
+    if (!open) return undefined
+
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    closeRef.current?.focus({ preventScroll: true })
+
+    function handleKeyDown(event) {
+      if (event.key === 'Escape') setOpen(false)
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+    return () => {
+      document.body.style.overflow = previousOverflow
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [open])
+
+  if (!open) return null
+
+  return (
+    <div
+      className="testimonials-welcome-overlay"
+      onClick={(event) => {
+        if (event.target === event.currentTarget) setOpen(false)
+      }}
+    >
+      <div className="testimonials-welcome-modal" role="dialog" aria-modal="true" aria-labelledby="testimonials-welcome-title">
+        <span className="testimonials-welcome-badge">NEW</span>
+        <button
+          ref={closeRef}
+          type="button"
+          className="testimonials-welcome-close"
+          onClick={() => setOpen(false)}
+          aria-label="Close testimonials introduction"
+        >
+          ×
+        </button>
+        <p className="testimonials-welcome-eyebrow">Community voices</p>
+        <h2 id="testimonials-welcome-title">What our people say</h2>
+        <p>
+          See how learners are building confidence and real-world skills with GDG.
+        </p>
+        <a className="testimonials-welcome-link" href="/#testimonials" onClick={() => setOpen(false)}>
+          Read their stories
+        </a>
+      </div>
+    </div>
   )
 }
