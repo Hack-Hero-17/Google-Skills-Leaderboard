@@ -135,7 +135,7 @@ export function TestimonialsWelcomeModal() {
         <p className="testimonials-welcome-eyebrow">Community voices</p>
         <h2 id="testimonials-welcome-title">What our people say</h2>
         <p>
-          See how learners are building confidence and real-world skills with GDG.
+          See how learners are building confidence and real-world skills with GDG - Learn with Communities.
         </p>
         <a className="testimonials-welcome-link" href="/#testimonials" onClick={() => setOpen(false)}>
           Read their stories
