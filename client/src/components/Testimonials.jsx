@@ -3,6 +3,7 @@ import FAHMIYA_PHOTO from '../assets/fahmiya-fathima.jpeg'
 import KAUSHAL from '../assets/kaushal.png'
 import RATHI from '../assets/Rathi.jpeg'
 import MANOJ from '../assets/manoj.jpeg'
+import HARISH from '../assets/harish.jpeg'
 import '../styles/Testimonials.css'
 
 const TESTIMONIALS = [
@@ -33,6 +34,13 @@ const TESTIMONIALS = [
     quote: 'Had a great experience with the Learn with Communities programme! Got to explore Google Cloud, learn new concepts, and gain practical knowledge through hands-on labs. Earning badges along the way made the journey even more exciting. Overall, it was a fun and valuable learning experience. Thanks to GDG for this opportunity!',
     photo: MANOJ,
     accent: 'yellow',
+  },
+  {
+    name: 'Sri Harish Kumar S',
+    role: 'Learn with Communities participant',
+    quote: 'The experience was engaging and rewarding. I gained hands-on experience with Google Cloud, explored new technologies, and earned valuable skill badges along the way. The practical tasks helped me improve my technical knowledge and confidence. A great learning experience beyond the classroom!',
+    photo: HARISH,
+    accent: 'blue',
   },
 ]
 
