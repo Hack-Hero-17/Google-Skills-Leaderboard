@@ -4,6 +4,8 @@ import KAUSHAL from '../assets/kaushal.png'
 import RATHI from '../assets/Rathi.jpeg'
 import MANOJ from '../assets/manoj.jpeg'
 import HARISH from '../assets/harish.jpeg'
+import ANBU from '../assets/anbu.jpeg'
+import SUJITH from '../assets/sujith.jpeg'
 import '../styles/Testimonials.css'
 
 const TESTIMONIALS = [
@@ -42,6 +44,20 @@ const TESTIMONIALS = [
     photo: HARISH,
     accent: 'blue',
   },
+  {
+    name: 'Anbuselvan J',
+    role: 'Learn with Communities participant',
+    quote: 'Initially, Google Cloud labs felt challenging and confusing, but with continuous practice, I successfully completed all 10 skills. This hands-on experience helped me explore Google Cloud features and gain practical knowledge. A big thanks to GDG MIT and Google Cloud Learn with Communities for this wonderful opportunity! 🚀',
+    photo: ANBU,
+    accent: 'purple',
+  },
+  {
+    name: 'Sujith B',
+    role: 'Learn with Communities participant',
+    quote: 'For me, it was a fun and exciting learning experience in Google Cloud! I got the chance to explore Google services, try out hands-on labs, and learn things beyond just theory. Each activity gave me something new to work on, and the experience definitely made me more curious to explore cloud technologies further.',
+    photo: SUJITH,
+    accent: 'orange',
+  }
 ]
 
 export default function Testimonials() {
