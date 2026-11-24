@@ -146,24 +146,27 @@ export function TestimonialsWelcomeModal() {
       }}
     >
       <div className="testimonials-welcome-modal" role="dialog" aria-modal="true" aria-labelledby="testimonials-welcome-title">
-        <span className="testimonials-welcome-badge">NEW</span>
         <button
           ref={closeRef}
           type="button"
           className="testimonials-welcome-close"
           onClick={() => setOpen(false)}
-          aria-label="Close testimonials introduction"
+          aria-label="Close campaign announcement"
         >
           ×
         </button>
-        <p className="testimonials-welcome-eyebrow">Community voices</p>
-        <h2 id="testimonials-welcome-title">What our people say</h2>
-        <p>
-          See how learners are building confidence and real-world skills with GDG - Learn with Communities.
+        <span className="testimonials-welcome-badge">CAMPAIGN ENDED</span>
+        <h3 id="testimonials-welcome-title">Learn with Communities Campaign officially ended!</h3>
+      
+        <p className="testimonials-welcome-deadline">
+          The campaign ended on <strong>23 November 2026</strong>.
+          Badges earned after this date <strong>will not be considered</strong>.
         </p>
-        <a className="testimonials-welcome-link" href="/#testimonials" onClick={() => setOpen(false)}>
-          Read their stories
-        </a>
+        <p className="testimonials-welcome-shipment">
+          <strong>Congratulations to the completed students!</strong><br />
+          Eligible participants will receive an email for collecting shipment details.
+          <strong> Please fill out the Google Form on time,</strong> so your goodies can be delivered promptly.
+        </p>
       </div>
     </div>
   )
